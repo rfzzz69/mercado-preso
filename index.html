@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Livre | Super Oferta Relâmpago - iPhone 15 Pro Max</title>
+    <!-- Ícones e Fontes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: #EDEDED;
+            color: #333333;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Top Bar & Header Mercado Livre Style */
+        header {
+            background-color: #FFE600;
+            padding: 10px 0 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .header-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .logo-box {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: #2D3277;
+            font-weight: 800;
+            font-size: 22px;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-box i {
+            font-size: 28px;
+            color: #2D3277;
+        }
+
+        .search-bar-wrap {
+            flex: 1;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            height: 40px;
+            padding: 0 45px 0 16px;
+            border-radius: 4px;
+            border: 1px solid transparent;
+            background: #FFFFFF;
+            font-size: 15px;
+            box-shadow: 0 1px 2px 0 rgba(0,0,0,0.2);
+            outline: none;
+        }
+
+        .search-btn {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #666;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .header-promo-banner {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 700;
+            color: #333;
+            background: rgba(255,255,255,0.4);
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        .header-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            font-size: 13px;
+            color: #333;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: rgba(51,51,51,0.9);
+            font-size: 13px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #000;
+        }
+
+        .user-nav {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        /* Urgency Banner */
+        .urgency-bar {
+            background: linear-gradient(90deg, #D93B3B 0%, #E65100 100%);
+            color: white;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 13.5px;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .timer-badge {
+            background: rgba(0,0,0,0.3);
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Main Container */
+        .main-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 16px;
+        }
+
+        .product-card-wrap {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 24px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 36px;
+        }
+
+        /* Left: Gallery */
+        .gallery-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .main-photo-box {
+            width: 100%;
+            height: 460px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #FAFAFA;
+            border: 1px solid #EAEAEA;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .main-photo-box img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-photo-box:hover img {
+            transform: scale(1.04);
+        }
+
+        .promo-pill-float {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: #00A650;
+            color: white;
+            font-size: 11px;
+            font-weight: 800;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        .thumbs-row {
+            display: flex;
+            gap: 10px;
+        }
+
+        .thumb-item {
+            width: 65px;
+            height: 65px;
+            border: 2px solid #3483FA;
+            border-radius: 6px;
+            padding: 4px;
+            cursor: pointer;
+            background: #FFF;
+        }
+
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /* Right: Product Details */
+        .details-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sales-condition {
+            font-size: 12.5px;
+            color: rgba(0,0,0,0.55);
+            margin-bottom: 6px;
+        }
+
+        .product-title {
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.25;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .stars-box {
+            color: #3483FA;
+            font-size: 14px;
+        }
+
+        .reviews-counter {
+            font-size: 12.5px;
+            color: #3483FA;
+            cursor: pointer;
+        }
+
+        .badge-bestseller {
+            background: #F73;
+            color: #FFF;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin-left: 8px;
+        }
+
+        /* Price Area */
+        .price-area {
+            background: #F9F9FF;
+            border: 1px solid #E3E8EE;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 18px;
+        }
+
+        .price-original {
+            font-size: 14px;
+            color: #999;
+            text-decoration: line-through;
+            margin-bottom: 2px;
+        }
+
+        .price-current-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .price-current {
+            font-size: 36px;
+            font-weight: 300;
+            color: #00A650;
+        }
+
+        .price-current b {
+            font-weight: 700;
+        }
+
+        .price-discount-tag {
+            font-size: 16px;
+            font-weight: 600;
+            color: #00A650;
+        }
+
+        .price-condition {
+            font-size: 13px;
+            color: #333;
+            margin-top: 4px;
+        }
+
+        .pix-exclusive-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #E8F5E9;
+            color: #1B5E20;
+            font-size: 11.5px;
+            font-weight: 700;
+            padding: 4px 10px;
+            border-radius: 4px;
+            margin-top: 8px;
+        }
+
+        /* Shipping & Stock */
+        .shipping-info-box {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #00A650;
+        }
+
+        .shipping-info-box i {
+            font-size: 20px;
+            margin-top: 2px;
+        }
+
+        .shipping-info-box .shipping-title {
+            font-weight: 600;
+        }
+
+        .shipping-info-box .shipping-sub {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .stock-alert {
+            font-size: 13px;
+            font-weight: 700;
+            color: #D32F2F;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Action Buttons */
+        .actions-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .btn-comprar-agora {
+            background-color: #3483FA;
+            color: white;
+            border: none;
+            height: 48px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-comprar-agora:hover {
+            background-color: #2968C8;
+        }
+
+        .btn-adicionar-carrinho {
+            background-color: rgba(65,137,230,0.15);
+            color: #3483FA;
+            border: none;
+            height: 48px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-adicionar-carrinho:hover {
+            background-color: rgba(65,137,230,0.25);
+        }
+
+        /* Security Badges */
+        .safety-perks {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-size: 12.5px;
+            color: #666;
+            border-top: 1px solid #EEE;
+            padding-top: 16px;
+        }
+
+        .safety-perk-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .safety-perk-item i {
+            color: #00A650;
+            font-size: 16px;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            background: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 28px;
+            margin-top: 24px;
+        }
+
+        .section-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #EAEAEA;
+            padding-bottom: 16px;
+            margin-bottom: 20px;
+        }
+
+        .section-header-row h3 {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .rating-overview {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .rating-big-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .review-card {
+            background: #FAFAFA;
+            border: 1px solid #EFEFEF;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .review-user-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .review-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #3483FA;
+        }
+
+        .review-user-info strong {
+            display: block;
+            font-size: 13.5px;
+            color: #333;
+        }
+
+        .review-user-info small {
+            font-size: 11px;
+            color: #888;
+        }
+
+        .review-stars {
+            color: #3483FA;
+            font-size: 12px;
+        }
+
+        .review-comment {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.45;
+        }
+
+        .review-verified-badge {
+            font-size: 11px;
+            color: #00A650;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            margin-top: auto;
+        }
+
+        /* Modal Falso de Checkout */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
+            padding: 16px;
+        }
+
+        .modal-card {
+            background: white;
+            border-radius: 12px;
+            max-width: 440px;
+            width: 100%;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: popIn 0.2s ease-out;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-card i.warn-icon {
+            font-size: 54px;
+            color: #00A650;
+            margin-bottom: 12px;
+        }
+
+        .btn-modal-close {
+            background: #3483FA;
+            color: white;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 18px;
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            background: #FFFFFF;
+            border-top: 1px solid #EAEAEA;
+            margin-top: 40px;
+            padding: 30px 16px;
+            font-size: 12px;
+            color: #999;
+            text-align: center;
+        }
+
+        @media (max-width: 860px) {
+            .product-card-wrap {
+                grid-template-columns: 1fr;
+            }
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Urgency Bar -->
+    <div class="urgency-bar">
+        <span>⚡ <strong>OFERTA RELÂMPAGO DO DIA:</strong> 85% DE DESCONTO EXCLUSIVO NO PIX</span>
+        <span class="timer-badge" id="countdown-timer">14:59</span>
+    </div>
+
+    <!-- Header Estilo Mercado Livre -->
+    <header>
+        <div class="header-container">
+            <div class="header-top">
+                <a href="#" class="logo-box">
+                    <i class="ti ti-hand-stop"></i>
+                    <span>mercadolivre</span>
+                </a>
+
+                <div class="search-bar-wrap">
+                    <input type="text" class="search-input" placeholder="Buscar produtos, marcas e muito mais..." value="iPhone 15 Pro Max 256GB">
+                    <button class="search-btn"><i class="ti ti-search"></i></button>
+                </div>
+
+                <div class="header-promo-banner">
+                    <i class="ti ti-bolt text-yellow"></i>
+                    <span>Assine o Meli+</span>
+                </div>
+            </div>
+
+            <div class="header-bottom">
+                <ul class="nav-links">
+                    <li><a href="#">Categorias</a></li>
+                    <li><a href="#">Ofertas do dia</a></li>
+                    <li><a href="#">Histórico</a></li>
+                    <li><a href="#">Moda</a></li>
+                    <li><a href="#">Vender</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+
+                <div class="user-nav">
+                    <a href="#" style="text-decoration:none; color:#333;">Crie a sua conta</a>
+                    <a href="#" style="text-decoration:none; color:#333;">Entre</a>
+                    <a href="#" style="text-decoration:none; color:#333;"><i class="ti ti-shopping-cart" style="font-size:18px;"></i></a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        
+        <!-- Bloco Principal do Produto -->
+        <div class="product-card-wrap">
+            
+            <!-- Coluna 1: Galeria de Fotos -->
+            <div class="gallery-container">
+                <div class="main-photo-box">
+                    <span class="promo-pill-float">-85% OFF HOJE</span>
+                    <img id="main-product-img" src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800&auto=format&fit=crop" alt="Apple iPhone 15 Pro Max Titânio">
+                </div>
+                <div class="thumbs-row">
+                    <div class="thumb-item" onclick="changeImage('https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=800&auto=format&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?q=80&w=200&auto=format&fit=crop" alt="iPhone 15 Frente">
+                    </div>
+                    <div class="thumb-item" onclick="changeImage('https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=800&auto=format&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=200&auto=format&fit=crop" alt="iPhone 15 Traseira">
+                    </div>
+                    <div class="thumb-item" onclick="changeImage('https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=800&auto=format&fit=crop')">
+                        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=200&auto=format&fit=crop" alt="iPhone 15 Caixa">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Detalhes da Compra / Preço Isca -->
+            <div class="details-col">
+                <span class="sales-condition">Novo | +5.000 vendidos | Destaque Especial</span>
+                <h1 class="product-title">Apple iPhone 15 Pro Max (256 GB) - Titânio Natural - Distribuição Oficial</h1>
+                
+                <div class="rating-row">
+                    <div class="stars-box">
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                    </div>
+                    <span class="reviews-counter">4.9 (1.428 avaliações)</span>
+                    <span class="badge-bestseller">MAIS VENDIDO</span>
+                </div>
+
+                <!-- Caixa de Preço Tentador -->
+                <div class="price-area">
+                    <div class="price-original">R$ 9.499,00</div>
+                    <div class="price-current-row">
+                        <span class="price-current">R$ <b>1.299</b><small>,90</small></span>
+                        <span class="price-discount-tag">86% OFF</span>
+                    </div>
+                    <div class="price-condition">em 10x de R$ 129,99 sem juros no cartão</div>
+                    <div>
+                        <span class="pix-exclusive-badge">
+                            <i class="ti ti-qrcode"></i> Pague com Pix e ganhe envio Expresso Grátis
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Frete e Entrega -->
+                <div class="shipping-info-box">
+                    <i class="ti ti-truck-delivery"></i>
+                    <div>
+                        <div class="shipping-title">Chegará grátis amanhã</div>
+                        <div class="shipping-sub">Comprando dentro dos próximos 15 minutos</div>
+                    </div>
+                </div>
+
+                <div class="stock-alert">
+                    <i class="ti ti-flame"></i>
+                    <span>Últimas 3 unidades em estoque com esse preço promocional!</span>
+                </div>
+
+                <!-- Botões de Compra -->
+                <div class="actions-group">
+                    <button class="btn-comprar-agora" onclick="abrirCheckoutMock()">
+                        <i class="ti ti-bolt"></i> Comprar agora
+                    </button>
+                    <button class="btn-adicionar-carrinho" onclick="abrirCheckoutMock()">
+                        Adicionar ao carrinho
+                    </button>
+                </div>
+
+                <!-- Garantias -->
+                <div class="safety-perks">
+                    <div class="safety-perk-item">
+                        <i class="ti ti-shield-check"></i>
+                        <span><strong>Compra Garantida</strong>, receba o produto que está esperando ou devolvemos seu dinheiro.</span>
+                    </div>
+                    <div class="safety-perk-item">
+                        <i class="ti ti-trophy"></i>
+                        <span><strong>12 meses de garantia</strong> de fábrica oficial com nota fiscal.</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Seção de Depoimentos e Avaliações Fakes -->
+        <div class="reviews-section">
+            <div class="section-header-row">
+                <div>
+                    <h3>Opiniões sobre o produto</h3>
+                    <p style="font-size: 13px; color: #777; margin-top: 4px;">Avaliações recentes de compradores verificados</p>
+                </div>
+                <div class="rating-overview">
+                    <div class="rating-big-number">4.9</div>
+                    <div>
+                        <div class="stars-box" style="font-size: 16px;">
+                            <i class="ti ti-star-filled"></i>
+                            <i class="ti ti-star-filled"></i>
+                            <i class="ti ti-star-filled"></i>
+                            <i class="ti ti-star-filled"></i>
+                            <i class="ti ti-star-filled"></i>
+                        </div>
+                        <span style="font-size:12px; color:#888;">Média entre 1.428 opiniões</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid de Reviews com Fotos Realistas -->
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-user-row">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="Mariana S." class="review-avatar">
+                        <div class="review-user-info">
+                            <strong>Mariana Siqueira</strong>
+                            <small>São Paulo, SP • Ontem</small>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                    </div>
+                    <p class="review-comment">"Confesso que fiquei com medo pelo preço no PIX ser tão baixo, mas chegou em menos de 24 horas aqui em Moema! Original na caixa lacrada com selo da Anatel. Recomendo demais!"</p>
+                    <div class="review-verified-badge">
+                        <i class="ti ti-circle-check-filled"></i> Compra verificada
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-user-row">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop" alt="Lucas R." class="review-avatar">
+                        <div class="review-user-info">
+                            <strong>Lucas Rocha</strong>
+                            <small>Curitiba, PR • Há 2 dias</small>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                    </div>
+                    <p class="review-comment">"Aparelho sensacional! Câmera incrível de 48MP e a bateria dura mais de um dia inteiro. O desconto pelo QR Code do Pix compensou muito, economizei quase 8 mil reais."</p>
+                    <div class="review-verified-badge">
+                        <i class="ti ti-circle-check-filled"></i> Compra verificada
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-user-row">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Gabriel T." class="review-avatar">
+                        <div class="review-user-info">
+                            <strong>Gabriel Tavares</strong>
+                            <small>Belo Horizonte, MG • Há 3 dias</small>
+                        </div>
+                    </div>
+                    <div class="review-stars">
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                        <i class="ti ti-star-filled"></i>
+                    </div>
+                    <p class="review-comment">"Comprei 2 unidades pra aproveitar a promoção relâmpago antes que esgotasse. Chegaram bem embalados com plástico bolha e nota fiscal no meu e-mail. Vale cada centavo!"</p>
+                    <div class="review-verified-badge">
+                        <i class="ti ti-circle-check-filled"></i> Compra verificada
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Modal Falso de Checkout -->
+    <div id="checkout-modal" class="modal-overlay">
+        <div class="modal-card">
+            <i class="ti ti-qrcode warn-icon"></i>
+            <h3 style="font-size:20px; font-weight:700; margin-bottom:8px;">Pague via PIX Imediato</h3>
+            <p style="font-size:13px; color:#666; margin-bottom:14px;">Chave PIX promocional gerada para garantir seu desconto de 85%:</p>
+            
+            <div style="background:#F4F4F4; padding:10px; border-radius:6px; font-family:monospace; font-size:12px; margin-bottom:12px; word-break:break-all;">
+                00020126580014BR.GOV.BCB.PIX0136pagamento-promocional-fake@mercadolivre-promo.xyz52040000530398654041299.905802BR5925MERCADO LIVRE PROMO LTDA
+            </div>
+
+            <p style="font-size:11.5px; color:#D32F2F; font-weight:600;">
+                ⚠️ Atenção: O pedido será cancelado em 10 minutos caso o PIX não seja liquidado!
+            </p>
+
+            <button class="btn-modal-close" onclick="fecharCheckoutMock()">Fechar Simulação</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="max-width:1200px; margin:0 auto; line-height: 1.6;">
+            <p>CNPJ n.º 03.007.331/0001-41 / Av. das Nações Unidas, nº 3.003, Bonfim, Osasco/SP - CEP 06233-903</p>
+            <p>© 1999-2026 Mercado Livre S.R.L. - Todos os direitos reservados.</p>
+            <p style="margin-top:8px; font-size:11px; color:#BBB;">Página de demonstração para testes de auditoria e cibersegurança da Veridion AI.</p>
+        </div>
+    </footer>
+
+    <!-- Script de Interatividade -->
+    <script>
+        function changeImage(url) {
+            document.getElementById('main-product-img').src = url;
+        }
+
+        let timeLeft = 14 * 60 + 59;
+        const timerEl = document.getElementById('countdown-timer');
+        setInterval(() => {
+            if (timeLeft <= 0) {
+                timeLeft = 15 * 60;
+            }
+            timeLeft--;
+            const mins = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+            const secs = (timeLeft % 60).toString().padStart(2, '0');
+            timerEl.textContent = `${mins}:${secs}`;
+        }, 1000);
+
+        function abrirCheckoutMock() {
+            document.getElementById('checkout-modal').style.display = 'flex';
+        }
+
+        function fecharCheckoutMock() {
+            document.getElementById('checkout-modal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('checkout-modal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
